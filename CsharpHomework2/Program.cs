@@ -4,17 +4,17 @@
 // 782 -> 8
 // 918 -> 1
 
-var phrase = "Введите трёхзначное число ";
-int someNumber = 0;
+// var phrase = "Введите трёхзначное число ";
+// int someNumber = 0;
 
-while(someNumber>1000 || someNumber<100)
-{
-    Console.WriteLine(phrase);
-    someNumber = int.Parse(Console.ReadLine());
-    phrase = "Введенное число вне диапазона! Введите трехзначное число ";
-}
-int secondNumberOfSomeNumber = someNumber/10%10;
-Console.WriteLine(secondNumberOfSomeNumber);
+// while(someNumber>1000 || someNumber<100)
+// {
+//     Console.WriteLine(phrase);
+//     someNumber = int.Parse(Console.ReadLine());
+//     phrase = "Введенное число вне диапазона! Введите трехзначное число ";
+// }
+// int secondNumberOfSomeNumber = someNumber/10%10;
+// Console.WriteLine(secondNumberOfSomeNumber);
 
 
 
@@ -25,6 +25,30 @@ Console.WriteLine(secondNumberOfSomeNumber);
 // 78 -> третьей цифры нет
 
 // 32679 -> 6
+
+Console.Write("Введите число ");
+var someNumber2 = int.Parse(Console.ReadLine());
+
+var thirdNumberOfSomeNumber2 = someNumber2;
+if(thirdNumberOfSomeNumber2 < 0)
+{
+    thirdNumberOfSomeNumber2 = thirdNumberOfSomeNumber2 * -1;
+}
+
+while(thirdNumberOfSomeNumber2>999)
+{
+    thirdNumberOfSomeNumber2 = thirdNumberOfSomeNumber2 / 10;
+}
+if(thirdNumberOfSomeNumber2 < 100)
+{
+    Console.WriteLine("Третьей цифры нет");
+}
+else
+{
+    Console.WriteLine(thirdNumberOfSomeNumber2 % 10);
+}
+
+
 
 // Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
