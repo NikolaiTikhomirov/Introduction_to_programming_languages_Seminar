@@ -26,27 +26,27 @@
 
 // 32679 -> 6
 
-Console.Write("Введите число ");
-var someNumber2 = int.Parse(Console.ReadLine());
+// Console.Write("Введите число ");
+// var someNumber2 = int.Parse(Console.ReadLine());
 
-var thirdNumberOfSomeNumber2 = someNumber2;
-if(thirdNumberOfSomeNumber2 < 0)
-{
-    thirdNumberOfSomeNumber2 = thirdNumberOfSomeNumber2 * -1;
-}
+// var thirdNumberOfSomeNumber2 = someNumber2;
+// if(thirdNumberOfSomeNumber2 < 0)
+// {
+//     thirdNumberOfSomeNumber2 = thirdNumberOfSomeNumber2 * -1;
+// }
 
-while(thirdNumberOfSomeNumber2>999)
-{
-    thirdNumberOfSomeNumber2 = thirdNumberOfSomeNumber2 / 10;
-}
-if(thirdNumberOfSomeNumber2 < 100)
-{
-    Console.WriteLine("Третьей цифры нет");
-}
-else
-{
-    Console.WriteLine(thirdNumberOfSomeNumber2 % 10);
-}
+// while(thirdNumberOfSomeNumber2>999)
+// {
+//     thirdNumberOfSomeNumber2 = thirdNumberOfSomeNumber2 / 10;
+// }
+// if(thirdNumberOfSomeNumber2 < 100)
+// {
+//     Console.WriteLine("Третьей цифры нет");
+// }
+// else
+// {
+//     Console.WriteLine(thirdNumberOfSomeNumber2 % 10);
+// }
 
 
 
@@ -55,3 +55,22 @@ else
 // 6 -> да
 // 7 -> да
 // 1 -> нет
+
+
+Console.WriteLine("Введите цифру, обозначающую день недели и мы проверим, является ли этот день выходным!");
+int weeknumber = int.Parse(Console.ReadLine());
+
+while(weeknumber < 1 || weeknumber > 7)
+{
+    Console.WriteLine("Такого дня недели не существует. Введите число от 1 до 7 включительно");
+    weeknumber = int.Parse(Console.ReadLine());
+}
+
+if(weeknumber > 0 && weeknumber < 6)
+{
+    Console.WriteLine("Нет, это будний день");
+}
+else
+{
+    Console.WriteLine("Да, этот день выходной.");
+}
