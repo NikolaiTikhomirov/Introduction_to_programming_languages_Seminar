@@ -46,27 +46,27 @@
 // A (3,6,8); B (2,1,-7), -> 15.84
 // A (7,-5, 0); B (1,-1,9) -> 11.53
 
-Console.WriteLine("Введите координаты двух точек в 3D пространстве");
-bool isParsedxa = int.TryParse(Console.ReadLine(), out int xa);
-bool isParsedya = int.TryParse(Console.ReadLine(), out int ya);
-bool isParsedza = int.TryParse(Console.ReadLine(), out int za);
-bool isParsedxb = int.TryParse(Console.ReadLine(), out int xb);
-bool isParsedyb = int.TryParse(Console.ReadLine(), out int yb);
-bool isParsedzb = int.TryParse(Console.ReadLine(), out int zb);
+// Console.WriteLine("Введите координаты двух точек в 3D пространстве");
+// bool isParsedxa = int.TryParse(Console.ReadLine(), out int xa);
+// bool isParsedya = int.TryParse(Console.ReadLine(), out int ya);
+// bool isParsedza = int.TryParse(Console.ReadLine(), out int za);
+// bool isParsedxb = int.TryParse(Console.ReadLine(), out int xb);
+// bool isParsedyb = int.TryParse(Console.ReadLine(), out int yb);
+// bool isParsedzb = int.TryParse(Console.ReadLine(), out int zb);
 
-if(!isParsedxa || !isParsedya || !isParsedza || !isParsedxb || !isParsedyb || !isParsedzb)
-{
-    Console.WriteLine("Координаты введены не корректно");
-    return;
-}
-Console.WriteLine(DistanceBetweenToPoints(xa, ya, za, xb, yb, zb));
+// if(!isParsedxa || !isParsedya || !isParsedza || !isParsedxb || !isParsedyb || !isParsedzb)
+// {
+//     Console.WriteLine("Координаты введены не корректно");
+//     return;
+// }
+// Console.WriteLine(DistanceBetweenToPoints(xa, ya, za, xb, yb, zb));
 
 
-double DistanceBetweenToPoints (int x1, int y1, int z1, int x2, int y2, int z2)
-{
-    double distance = Math.Sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1) + (z2 - z1)*(z2 - z1));
-    return distance;
-}
+// double DistanceBetweenToPoints (int x1, int y1, int z1, int x2, int y2, int z2)
+// {
+//     double distance = Math.Sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1) + (z2 - z1)*(z2 - z1));
+//     return distance;
+// }
 
 
 
@@ -74,6 +74,39 @@ double DistanceBetweenToPoints (int x1, int y1, int z1, int x2, int y2, int z2)
 
 
 // Задача 23
-// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N. Задание должно быть выполнено в методе и метод должен вернуть массив чисел.
+// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+// Задание должно быть выполнено в методе и метод должен вернуть массив чисел.
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
+
+
+Console.Write("Введите число ");
+int N = int.Parse(Console.ReadLine());
+int Nmin = 1;
+int[] ArrayСube = new int[N+1-Nmin];
+FillArrayСube(ArrayСube);
+PrintArray(ArrayСube);
+
+
+void FillArrayСube(int[] Collection)
+{
+    int length = Collection.Length;
+    int index = 0;
+    while(index < length)
+    {
+        Collection[index] = (int) Math.Pow(Nmin,3);
+        index++;
+        Nmin++;
+    }
+}
+
+void PrintArray(int[] Col)
+{
+    int count = Col.Length;
+    int position = 0;
+    while(position < count)
+    {
+        Console.WriteLine(Col[position]);
+        position++;
+    }
+}
