@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages\\CsharpSeminar\\CsharpSeminar.csproj": {}
+    "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages_Seminar\\Csharp\\CsharpSeminar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages\\CsharpSeminar\\CsharpSeminar.csproj": {
+    "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages_Seminar\\Csharp\\CsharpSeminar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages\\CsharpSeminar\\CsharpSeminar.csproj",
+        "projectUniqueName": "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages_Seminar\\Csharp\\CsharpSeminar.csproj",
         "projectName": "CsharpSeminar",
-        "projectPath": "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages\\CsharpSeminar\\CsharpSeminar.csproj",
+        "projectPath": "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages_Seminar\\Csharp\\CsharpSeminar.csproj",
         "packagesPath": "C:\\Users\\kolya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages\\CsharpSeminar\\obj\\",
+        "outputPath": "C:\\Users\\kolya\\Desktop\\studentAgain\\Introduction_to_programming_languages_Seminar\\Csharp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kolya\\AppData\\Roaming\\NuGet\\NuGet.Config"
