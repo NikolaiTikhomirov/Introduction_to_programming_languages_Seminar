@@ -3,23 +3,45 @@
 // Задание должно быть выполнено в методе. В методе не должно быть вывода в консоль.
 // Не использовать Math.Pow()
 
-// Console.WriteLine("Введитте два числа:");
-// int number1 = int.Parse(Console.ReadLine());
-// int number2 = int.Parse(Console.ReadLine());
+Console.WriteLine("Введитте два числа:");
+int number1 = int.Parse(Console.ReadLine());
+int number2 = int.Parse(Console.ReadLine());
 
-// Console.WriteLine(Exponentiation(number1, number2));
+if (number1 == 0 && number2 == 0) Console.WriteLine("Возводить 0 в степень 0 не имеет смысла, так как такое выражение не может быть определено.");
+else Console.WriteLine(Exponentiation(number1, number2));
 
-// int Exponentiation(int a, int b)
-// {
-//     int c = a;
-//     int index = 1;
-//     while(index < b)
-//     {
-//         c = c*a;
-//         index++;
-//     }
-//     return c;
-// }
+decimal Exponentiation(int a, int b)
+{
+    decimal c = a;
+    if (b == 0)
+    {
+        c = 1;
+        return c;
+    }
+    else
+    {
+        int index = 1;
+        if (b < 0)
+        {
+            c = 1 / HalfExponentiation(a, -b);
+        }
+        else
+        {
+            c = HalfExponentiation(a, b);
+        }
+        decimal HalfExponentiation(int aa, int bb)
+        {
+            decimal cc = aa;
+            while (index < bb)
+            {
+                cc = cc * aa;
+                index++;
+            }
+            return cc;
+        }
+        return c;
+    }
+}
 
 
 
@@ -30,21 +52,21 @@
 // 82 -> 10
 // 9012 -> 12
 
-Console.Write("Введите число:");
-int someNumber = int.Parse(Console.ReadLine());
+// Console.Write("Введите число:");
+// int someNumber = int.Parse(Console.ReadLine());
 
-Console.WriteLine(SumOfSomeNumber(someNumber));
+// Console.WriteLine(SumOfSomeNumber(someNumber));
 
-int SumOfSomeNumber(int temp)
-{
-    int a = 0;
-    while(temp > 0)
-    {
-        a = a + temp % 10;
-        temp = temp / 10;
-    }
-    return a;
-}
+// int SumOfSomeNumber(int temp)
+// {
+//     int a = 0;
+//     while(temp > 0)
+//     {
+//         a = a + temp % 10;
+//         temp = temp / 10;
+//     }
+//     return a;
+// }
 
 
 
