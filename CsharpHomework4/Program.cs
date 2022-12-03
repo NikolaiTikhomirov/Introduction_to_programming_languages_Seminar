@@ -3,6 +3,26 @@
 // Задание должно быть выполнено в методе. В методе не должно быть вывода в консоль.
 // Не использовать Math.Pow()
 
+Console.WriteLine("Введитте два числа:");
+int number1 = int.Parse(Console.ReadLine());
+int number2 = int.Parse(Console.ReadLine());
+
+Console.WriteLine(Exponentiation(number1, number2));
+
+int Exponentiation(int a, int b)
+{
+    int c = a;
+    int index = 1;
+    while(index < b)
+    {
+        c = c*a;
+        index++;
+    }
+    return c;
+}
+
+
+
 
 
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
