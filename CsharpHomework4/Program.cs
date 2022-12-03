@@ -16,7 +16,6 @@ decimal Exponentiation(int a, int b)
     if (b == 0)
     {
         c = 1;
-        return c;
     }
     else
     {
@@ -39,8 +38,8 @@ decimal Exponentiation(int a, int b)
             }
             return cc;
         }
-        return c;
     }
+    return c;
 }
 
 
