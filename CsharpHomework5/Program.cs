@@ -82,7 +82,6 @@ Console.WriteLine($"Разница между максимальным и мин
 
 double DifferenceBetweenMinMax (double[] col)
 {
-    double differenceMinMax = 0;
     double min = col[0];
     double max = col[0];
     for (int i = 0; i < col.Length; i++)
@@ -91,8 +90,7 @@ double DifferenceBetweenMinMax (double[] col)
         if (col[i] > max) max = col[i];
     }
     Console.WriteLine($"{min}, {max}");
-    differenceMinMax = max - min;
-    return differenceMinMax;
+    return max - min;
 }
 
 double[] GenerateArray (int min, int max, int length)
