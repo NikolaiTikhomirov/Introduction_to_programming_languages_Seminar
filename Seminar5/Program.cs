@@ -152,12 +152,11 @@ int[] SomeNewMassive(int[] arr)
 
 int[] GenerateArray(int min, int max, int length)
 {
-    Random random = new Random();
     int[] array = new int[length];
 
     for (var i = 0; i < array.Length; i++)
     {
-        array[i] = random.Next(min, max + 1);
+        array[i] = new Random().Next(min, max + 1);
     }
 
     return array;
