@@ -13,7 +13,7 @@ public static class Helper
         return array;
     }
 
-    public static void PrintArray(double[] arr)
+    public static void PrintArray(int[] arr)
     {
         Console.WriteLine($"[{string.Join(", ", arr)}]");
     }
