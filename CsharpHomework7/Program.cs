@@ -46,50 +46,105 @@
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
 
+// int m = 6;
+// int n = 3;
+// int[,] array = new int[m, n];
+
+// FillArrayRandome(array);
+// PrintArray(array);
+// Console.WriteLine();
+// Console.WriteLine(PrintArrayValueByCoordinates(array));
+
+// string PrintArrayValueByCoordinates (int[,] collection)
+// {
+//     string result = string.Empty;
+//         Console.WriteLine("Введите координаты элемента из двумерного массива, который вы хотите увидеть:");
+//         bool isParsedRowPosition = int.TryParse(Console.ReadLine(), out int rowPosition);
+//         bool isParsedColumnPosition = int.TryParse(Console.ReadLine(), out int columnPosition);
+//         if(!isParsedRowPosition || !isParsedColumnPosition)
+//         {
+//             result = "Координаты введены не корректно";
+//             return result;
+//         }
+//         if(rowPosition > collection.GetLength(0) || columnPosition > collection.GetLength(1) || rowPosition < 1 || columnPosition < 1)
+//         {
+//             result = "такого числа в массиве нет";
+//             return result;
+//         }
+//     result = collection[rowPosition - 1, columnPosition - 1].ToString();
+//     return result;
+// }
+
+
+// int[,] FillArrayRandome(int[,] arr)
+// {
+//     Random random = new Random();
+//     for (int i = 0; i < arr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < arr.GetLength(1); j++)
+//         {
+//             arr[i, j] = random.Next(-10, 10);
+//         }
+//     }
+//     return arr;
+// }
+
+// void PrintArray(int[,] col)
+// {
+//     for (int i = 0; i < col.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < col.GetLength(1); j++)
+//         {
+//             Console.Write($"{col[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
 int m = 6;
 int n = 3;
-int[,] array = new int[m, n];
+double[,] array = new double[m, n];
 
-FillArrayRandome(array);
-PrintArray(array);
-Console.WriteLine();
-Console.WriteLine(PrintArrayValueByCoordinates(array));
+FillArrayRandomeRealNumbers(array);
+PrintTwoDimensionalArray(array);
+double [] arithmeticMeanArray = ArithmeticMeanColumns(array);
+PrintArray(arithmeticMeanArray);
 
-string PrintArrayValueByCoordinates (int[,] collection)
+double [] ArithmeticMeanColumns (double [,] collection)
 {
-    string result = string.Empty;
-        Console.WriteLine("Введите координаты элемента из двумерного массива, который вы хотите увидеть:");
-        bool isParsedRowPosition = int.TryParse(Console.ReadLine(), out int rowPosition);
-        bool isParsedColumnPosition = int.TryParse(Console.ReadLine(), out int columnPosition);
-        if(!isParsedRowPosition || !isParsedColumnPosition)
+    double [] arithmeticMeanColumnsArray = new double [collection.GetLength(1)];
+    for (int i = 0; i < collection.GetLength(1); i++)
+    {
+        for (int j = 0; j < collection.GetLength(0); j++)
         {
-            result = "Координаты введены не корректно";
-            return result;
+            arithmeticMeanColumnsArray[i] = (arithmeticMeanColumnsArray[i] + collection[j, i])/2;
         }
-        if(rowPosition > collection.GetLength(0) || columnPosition > collection.GetLength(1) || rowPosition < 1 || columnPosition < 1)
-        {
-            result = "такого числа в массиве нет";
-            return result;
-        }
-    result = collection[rowPosition - 1, columnPosition - 1].ToString();
-    return result;
+    }
+
+    return arithmeticMeanColumnsArray;
 }
-
-
-int[,] FillArrayRandome(int[,] arr)
+double[,] FillArrayRandomeRealNumbers(double[,] arr)
 {
     Random random = new Random();
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-            arr[i, j] = random.Next(-10, 10);
+            arr[i, j] = Math.Round(random.NextDouble()*10, 1);
         }
     }
     return arr;
 }
 
-void PrintArray(int[,] col)
+void PrintTwoDimensionalArray(double[,] col)
 {
     for (int i = 0; i < col.GetLength(0); i++)
     {
@@ -101,10 +156,7 @@ void PrintArray(int[,] col)
     }
 }
 
-
-// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-// Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+void PrintArray(double[] arr)
+{
+    Console.WriteLine($"[{string.Join(", ", arr)}]");
+}
