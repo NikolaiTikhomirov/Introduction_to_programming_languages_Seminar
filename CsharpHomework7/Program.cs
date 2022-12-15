@@ -125,12 +125,13 @@ double [] ArithmeticMeanColumns (double [,] collection)
     {
         for (int j = 0; j < collection.GetLength(0); j++)
         {
-            arithmeticMeanColumnsArray[i] = (arithmeticMeanColumnsArray[i] + collection[j, i])/2;
+            arithmeticMeanColumnsArray[i] = Math.Round((arithmeticMeanColumnsArray[i] + collection[j, i])/2, 1);
         }
     }
 
     return arithmeticMeanColumnsArray;
 }
+
 double[,] FillArrayRandomeRealNumbers(double[,] arr)
 {
     Random random = new Random();
